@@ -31,3 +31,4 @@ require __DIR__.'/auth.php';
 Route::get('/component-test1', [ComponentTestController::class, 'showComponent1']);
 Route::get('/component-test2', [ComponentTestController::class, 'showComponent2']);
 Route::get('/servicecontainer', [LifecycleTestController::class, 'showServiceContainerTest']);
+Route::get('/serviceprovider', [LifecycleTestController::class, 'showServiceProviderTest']);
