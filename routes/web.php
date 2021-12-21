@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+// テスト用
 use App\Http\Controllers\ComponentTestController;
+use App\Http\Controllers\LifecycleTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +30,4 @@ require __DIR__.'/auth.php';
 // テスト用です
 Route::get('/component-test1', [ComponentTestController::class, 'showComponent1']);
 Route::get('/component-test2', [ComponentTestController::class, 'showComponent2']);
+Route::get('/servicecontainer', [LifecycleTestController::class, 'showServiceContainerTest']);
