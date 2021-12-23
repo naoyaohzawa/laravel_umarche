@@ -68,6 +68,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                {{$owners->links()}}
                             </div>
                             {{-- <div class="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
                             <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
