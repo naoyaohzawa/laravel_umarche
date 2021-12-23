@@ -8,12 +8,13 @@ use App\Models\Owner;
 use Illuminate\Support\Facades\DB; //クエリビルダー
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 
 class OwnersController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->middleware('auth:admin');
@@ -77,7 +78,11 @@ class OwnersController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('admin.owners.index')->with('message', 'オーナー登録完了しました');
+        return redirect()->route('admin.owners.index')
+            ->with([
+                'message' => 'オーナー登録完了しました',
+                'status' => 'info'
+            ]);
     }
 
     /**
@@ -120,7 +125,10 @@ class OwnersController extends Controller
         $owner->password = Hash::make($request->password);
         $owner->save();
 
-        return redirect()->route('admin.owners.index')->with('message', 'オーナーの更新完了しました');
+        return redirect()->route('admin.owners.index')
+            ->with(
+                ['message' => 'オーナーの更新完了しました', 'status' => 'info']
+            );
     }
 
     /**
@@ -132,5 +140,30 @@ class OwnersController extends Controller
     public function destroy($id)
     {
         //
+        // dd("削除処理");
+        Owner::findOrFail($id)->delete(); //ソフトデリート 
+        return redirect()
+            ->route('admin.owners.index')
+            ->with([
+                'message' => 'オーナー情報を削除しました',
+                'status' => 'alert'
+            ]);
+    }
+
+    // 期限切れownerの表示
+    public function expiredOwnerIndex()
+    {
+        $expiredOwners = Owner::onlyTrashed()->get();   //onlytrashedでsoftdeleteした情報を取得
+        return view(
+            'admin.expired-owners',
+            compact('expiredOwners')
+        );
+    }
+
+    // 期限切れownerの処理
+    public function expiredOwnerDestroy($id)
+    {
+        Owner::onlyTrashed()->findOrFail($id)->forceDelete();
+        return redirect()->route('admin.expired-owners.index');
     }
 }
