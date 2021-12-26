@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Ship;
 
 
 class Owner extends Authenticatable
@@ -41,4 +42,9 @@ class Owner extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Ship Moldeとのリレーション
+    public function ships(){
+        return $this->hasMany(Ship::class);
+    }
 }

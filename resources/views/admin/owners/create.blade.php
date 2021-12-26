@@ -61,7 +61,7 @@
 
                                         <div class="p-2 flex justify-around mt-4 w-full">
                                             <button type="button"
-                                                onclick="location.href='{{ route('admin.owners.index') }}' "
+                                                onclick="location.href='{{ route('admin.owners.index') }}'"
                                                 class="mx-auto text-white bg-gray-400 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">戻る</button>
                                             <button type="submit"
                                                 class="mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">登録する</button>

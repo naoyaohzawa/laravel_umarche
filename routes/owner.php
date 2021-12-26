@@ -11,6 +11,7 @@ use App\Http\Controllers\Owner\Auth\NewPasswordController;
 use App\Http\Controllers\Owner\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Owner\Auth\RegisteredUserController;
 use App\Http\Controllers\Owner\Auth\VerifyEmailController;
+use App\Http\Controllers\Owner\ShipsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,20 @@ Route::get('/', function () {
     return view('owner.welcome');
 });
 
+// 追加
+Route::resource('ships', ShipsController::class)
+    ->middleware('auth:owners')->except(['show']);
+
 Route::get('/dashboard', function () {
     return view('owner.dashboard');
 })->middleware(['auth:owners'])->name('dashboard');
+
+// Route::prefix('ships')->middleware('auth:owners')->group(function () {
+//     Route::get('index', [ShipsController::class,'index'])->name('ships.index');
+//     Route::get('edit{ships}', [ShipsController::class,'edit'])->name('ships.edit');
+//     Route::post('destroy{ships}',[ShipsController::class, 'destroy'])->name('ships.destroy');
+// });
+
 
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
