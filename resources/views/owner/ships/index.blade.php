@@ -89,7 +89,7 @@
     <script>
         function deletePost(e) {
             'use strict';
-            if (confirm('本当に削除してもいいですか?')) {
+            if (confirm('本当に削除してもいいですか? 登録された船の情報が全て削除されます')) {
                 document.getElementById('delete_' + e.dataset.id).submit();
             }
         }

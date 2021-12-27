@@ -4,23 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Ship;
 use App\Models\Owner;
-use App\Models\Voyage;
+use App\Models\Image;
 
-class Ship extends Model
+class Voyage extends Model
 {
     use HasFactory;
 
-    // protected $primaryKey = "";
+    public function ship()
+    {
+        return $this->belongsTo(Ship::class);
+    }
 
     public function owner()
     {
         return $this->belongsTo(Owner::class);
     }
 
-    // Voyage Moldeとのリレーション
-    public function voyages()
+    public function image()
     {
-        return $this->hasMany(Voyage::class);
+        return $this->hasMany(Image::class);
     }
 }

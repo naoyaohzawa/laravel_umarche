@@ -1,11 +1,11 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            登録船一覧
+            航海一覧
         </h2>
     </x-slot>
 
-    
+
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -14,54 +14,71 @@
                     <section class="text-gray-600 body-font">
                         <div class="container md:px-5 py12 mx-auto">
                             <x-flash-message status="session('status')" />
-                            
-                            <div class="lg:w-2/3 w-full mx-auto overflow-auto">
+
+                            <div class=" w-full mx-auto overflow-auto">
                                 <table class="table-auto w-full text-left whitespace-no-wrap">
                                     <thead>
                                         <tr>
                                             <th
-                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">
-                                                No.</th>
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                #</th>
                                             <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                                船名</th>
+                                                航海番号</th>
                                             <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                                船型</th>
+                                                船社名</th>
                                             <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                                MMSI</th>
+                                                荷主名</th>
                                             <th
-                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br">
-                                            </th>
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                船主名</th>
                                             <th
-                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tr rounded-br">
-                                            </th>
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                荷物名</th>
+                                            {{-- <th
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                荷物量</th> --}}
+                                            <th
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                荷上港</th>
+                                            <th
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                予定荷上げ日時</th>
+                                            <th
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                予定荷下港</th>
+                                            <th
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                予定荷下し日時</th>
+                                            <th
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                詳細ページ</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
-                                        @foreach ($ships as $key => $ship)
+
+
+                                        @foreach ($voyages as $key => $voyage)
                                             <tr>
                                                 <td class="md:px-4 py-3">{{ $key + 1 }}</td>
-                                                <td class="md:px-4 py-3">{{ $ship->vessel_name }}</td>
-                                                <td class="md:px-4 py-3">{{ $ship->vessel_type }}</td>
-                                                <td class="md:px-4 py-3 text-lg text-gray-900">
-                                                    {{ $ship->mmsi }}</td>
-                                                <td class="md:px-4 py-3 text-center">
-                                                    <button
-                                                        onclick="location.href='{{ route('owner.ships.edit', [ $ship->id]) }}'"
-                                                        class="mx-auto text-white bg-indigo-400 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded ">編集</button>
+                                                <td class="md:px-4 py-3">{{ $voyage->itinerary_number }}</td>
+                                                <td class="md:px-4 py-3">{{ $voyage->operator_name }}</td>
+                                                <td class="md:px-4 py-3">{{ $voyage->cargo_company_name }}</td>
+                                                <td class="md:px-4 py-3">{{ $voyage->owner_company_name }}</td>
+                                                <td class="md:px-4 py-3">{{ $voyage->cargo_description }}</td>
+                                                {{-- <td class="md:px-4 py-3">{{ $voyage->cargo_amount }}</td> --}}
+                                                <td class="md:px-4 py-3">{{ $voyage->planned_loading_port }}</td>
+                                                <td class="md:px-4 py-3">{{ $voyage->planned_loading_date }}</td>
+                                                <td class="md:px-4 py-3">{{ $voyage->planned_discharging_port }}
+                                                </td>
+                                                <td class="md:px-4 py-3">{{ $voyage->planned_discharging_date }}
                                                 </td>
                                                 <td class="md:px-4 py-3 text-center">
-                                                    <form id="delete_{{ $ship->id }}" method="post"
-                                                        action="{{ route('owner.ships.destroy', [ $ship->id]) }}">
-                                                        @csrf
-                                                        @method('delete')
-                                                        <a href="#" data-id="{{ $ship->id }}"
-                                                            onclick="deletePost(this)"
-                                                            class="mx-auto text-white bg-red-400 border-0 py-2 px-4 focus:outline-none hover:bg-red-600 rounded ">削除</a>
-                                                    </form>
+                                                    <button
+                                                        onclick="location.href='{{ route('owner.voyages.show', [ $voyage->id]) }}'"
+                                                        class="mx-auto text-white bg-indigo-400 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm">詳細へ移動</button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -69,11 +86,11 @@
                                 </table>
                                 {{-- {{$owners->links()}} --}}
                             </div>
-                           
-                          <div class="flex justify-end mb-4 mt-2">
-                            <button onclick="location.href='{{ route('owner.ships.create') }}' "
-                                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">船を新規登録</button>
-                        </div>
+
+                            <div class="flex justify-end mb-4 mt-2">
+                                <button onclick="location.href='{{ route('owner.voyages.create') }}' "
+                                    class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">航海を新規登録</button>
+                            </div>
                         </div>
                     </section>
                     <br>

@@ -20,6 +20,9 @@
                     <x-nav-link :href="route('owner.ships.index')" :active="request()->routeIs('owner.ships.index')">
                          登録船一覧 
                     </x-nav-link>
+                    <x-nav-link :href="route('owner.voyages.index')" :active="request()->routeIs('owner.voyages.index')">
+                        航海一覧
+                   </x-nav-link>
                 </div>
             </div>
 

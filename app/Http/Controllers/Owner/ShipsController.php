@@ -18,6 +18,8 @@ class ShipsController extends Controller
     
     public function index()
     {
+        
+
         $ships = Ship::get();
         // dd($ships);
         return view('owner.ships.index', compact('ships'));
@@ -70,7 +72,7 @@ class ShipsController extends Controller
         $ships->mmsi = $request->mmsi;
         $ships->call_number = $request->call_number;
         $ships->owner_company_id = 2;
-        $ships->owner_id = Auth::id();
+        $ships->owner_id = $request->user()->id;
         $ships->save();
 
         return redirect()->route('owner.ships.index');

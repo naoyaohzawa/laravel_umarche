@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Ship;
+use App\Models\Voyage;
 
 
 class Owner extends Authenticatable
@@ -44,7 +45,14 @@ class Owner extends Authenticatable
     ];
 
     // Ship Moldeとのリレーション
-    public function ships(){
+    public function ships()
+    {
         return $this->hasMany(Ship::class);
+    }
+
+    // Voyage Moldeとのリレーション
+    public function voyages()
+    {
+        return $this->hasMany(Voyage::class);
     }
 }
