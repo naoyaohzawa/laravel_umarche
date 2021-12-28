@@ -26,7 +26,7 @@ class VoyagesController extends Controller
 
         // $allVoyages = Ship::with('voyages')->get();
         // dd($allVoyages->voyages->ship_id);
-        $voyages = Voyage::get();
+        $voyages = Voyage::paginate(3);
         // dd($ships);
 
 
@@ -35,15 +35,22 @@ class VoyagesController extends Controller
         return view('owner.voyages.index', compact('voyages'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    // 航路作成画面
     public function create()
     {
-        //
+        $owner_id = Auth::id();
+        $ships = Ship::where('owner_id', $owner_id)->get();
+        return view('owner.voyages.create', compact('ships'));
     }
+
+
+    // public function confirm(Request $request)
+    // {
+    //     dd("作成画面です");
+    //     return view('owner.voyages.create_confirm');
+    // }
+
 
     /**
      * Store a newly created resource in storage.
@@ -53,7 +60,39 @@ class VoyagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        
+        $input_voyage_data = new Voyage;
+        $input_voyage_data->ship_id = 2;
+        $input_voyage_data->owner_id = Auth::id();
+        $input_voyage_data->itinerary_number = $request->itinerary_number;
+        $input_voyage_data->operator_name = $request->operator_name;
+        $input_voyage_data->operator_id = 2;
+        $input_voyage_data->cargo_company_name = $request->cargo_company_name;
+        $input_voyage_data->cargo_company_id = 3;        
+        $input_voyage_data->owner_company_name = $request->cargo_company_name;
+        $input_voyage_data->owner_company_id = 1;        
+        $input_voyage_data->cargo_description = $request->cargo_description;
+        $input_voyage_data->cargo_amount = $request->cargo_amount;
+        $input_voyage_data->planned_loading_port = $request->planned_loading_port;
+        $input_voyage_data->planned_discharging_port = $request->planned_discharging_port;
+        $input_voyage_data->planned_loading_date = $request->planned_loading_date;
+        $input_voyage_data->planned_discharging_date = $request->planned_discharging_date;
+
+        // $input_voyage_data->arrived_port_date = null;
+        // $input_voyage_data->loading_started_date = null;
+        // $input_voyage_data->loading_completed_date = null;
+        // $input_voyage_data->loading_port_disported_date = null;
+        // $input_voyage_data->discharging_port_arrived_date = null;
+        // $input_voyage_data->discharging_start_date = null;
+        // $input_voyage_data->discharging_complete_date = null;
+        // $input_voyage_data->discharging_port_disported_date = null;
+        // $input_voyage_data->complete_flag = null;
+        
+        $input_voyage_data->save();
+
+        $voyages = Voyage::get();
+        return view('owner.voyages.index', compact('voyages'));
     }
 
     /**

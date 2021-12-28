@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            新しい船を登録
+            新しい航海を登録
         </h2>
     </x-slot>
 
@@ -10,88 +10,117 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <section class="text-gray-600 body-font relative">
-                        <div class="container px-5 mx-auto">
-                            <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                        <div class="container px-3 mx-auto">
+                            <div class="lg:w-3/4 md:w-2/3 mx-auto">
                                 <!-- Validation Errors -->
                                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
                                 {{-- form --}}
-                                <form action="{{ route('owner.ships.store') }}" method="post">
-                                    @csrf
-                                    <div class="flex flex-wrap -m-2">
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="vessel_name"
-                                                    class="leading-7 text-sm text-gray-600">船名</label>
-                                                <input type="text" id="vessel_name" name="vessel_name" required
-                                                    value="{{ old('vessel_name') }}" placeholder="船名を入力してください"
-                                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                            </div>
-                                        </div>
-
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="owner_name"
-                                                class="leading-7 text-sm text-gray-600">船主名</label>
-                                                <input type="text" id="owner_name" name="owner_name" required
-                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" placeholder="船主名を入力してください" 
-                                                value="{{ old('owner_name') }}">
-                                            </div>
-                                        </div>
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="vessel_type"
-                                                class="leading-7 text-sm text-gray-600">船型</label>
-                                                <input type="text" id="vessel_type"  name="vessel_type"
-                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"    
-                                                    placeholder="船型を入力してください" value="{{ old('vessel_type') }}">
-                                            </div>
-                                        </div>
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="gross_ton"
-                                                class="leading-7 text-sm text-gray-600">Grossトン</label>
-                                                <input type="text" id="gross_ton" name="gross_ton"
-                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"     
-                                                placeholder="Grossトンを入力してください" value="{{ old('gross_ton') }}">
-                                            </div>
-                                        </div>
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="dwt"
-                                                class="leading-7 text-sm text-gray-600">dwt</label>
-                                                <input type="text"  name="dwt" id="dwt"
-                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"    
-                                                placeholder="dwtを入力してください" value="{{ old('dwt') }}">
-                                            </div>
-                                        </div>
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="mmsi"
-                                                class="leading-7 text-sm text-gray-600">mmsi</label>
-                                                <input type="text"  name="mmsi" id="mmsi"
-                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"    
-                                                placeholder="mmsiを入力してください" value="{{ old('mmsi') }}">
-                                            </div>
-                                        </div>
-                                        <div class="p-2 w-1/2 mx-auto">
-                                            <div class="relative">
-                                                <label for="call_number"
-                                                class="leading-7 text-sm text-gray-600">call Number</label>
-                                                <input type="text" id="call_number" name="call_number"
-                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
-                                                placeholder="call numberを入力してください" value="{{ old('call_number') }}">
-                                            </div>
-                                        </div>
-
-                                        <div class="p-2 flex justify-around mt-4 w-full">
-                                            <button type="button"
-                                                onclick="location.href='{{ route('owner.ships.index') }}'"
-                                                class="mx-auto text-white bg-gray-400 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">戻る</button>
-                                            <button type="submit"
-                                                class="mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">登録する</button>
+                                <form action="{{ route('owner.voyages.store') }}" method="post">
+                                @csrf
+                                <div class="flex flex-wrap -m-2">
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="vessel_name" class="leading-7 text-sm text-gray-600">船名</label>
+                                            <select id="vessel_name" name="vessel_name" required
+                                        value="{{ old('vessel_name') }}"
+                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                        @foreach ($ships as $ship)
+                                        <option>{{$ship->vessel_name}}</option>
+                                        @endforeach
+                                        </select>
                                         </div>
                                     </div>
+
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="itinerary_number" class="leading-7 text-sm text-gray-600">航路番号</label>
+                                            <input type="text" id="itinerary_number" name="itinerary_number" required
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="航海番号を入力してください" value="{{ old('itinerary_number') }}">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="operator_name" class="leading-7 text-sm text-gray-600">海運会社名</label>
+                                            <input type="text" id="operator_name" name="operator_name"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="海運会社を入力してください" value="{{ old('operator_name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="cargo_company_name"
+                                                class="leading-7 text-sm text-gray-600">荷主名</label>
+                                            <input type="text" id="cargo_company_name" name="cargo_company_name"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="荷主名を入力してください" value="{{ old('cargo_company_name') }}">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="cargo_description"
+                                                class="leading-7 text-sm text-gray-600">荷物名</label>
+                                            <input type="text" id="cargo_description" name="cargo_description"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="荷物名を入力してください" value="{{ old('cargo_description') }}">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="cargo_amount"
+                                                class="leading-7 text-sm text-gray-600">荷物量（DWT）</label>
+                                            <input type="text" id="cargo_amount" name="cargo_amount"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="荷物量を半角数字で入力してください" value="{{ old('cargo_amount') }}">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="planned_loading_port"
+                                                class="leading-7 text-sm text-gray-600">積地港</label>
+                                            <input type="text" id="planned_loading_port" name="planned_loading_port"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="積地港を入力してください" value="{{ old('planned_loading_port') }}">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="planned_discharging_port"
+                                                class="leading-7 text-sm text-gray-600">揚地港</label>
+                                            <input type="text" id="planned_discharging_port" name="planned_discharging_port"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="揚地港を入力してください" value="{{ old('planned_discharging_port') }}">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="planned_loading_date"
+                                                class="leading-7 text-sm text-gray-600">積み日時</label>
+                                            <input type="date" id="planned_loading_date" name="planned_loading_date"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="揚地港を入力してください" value="{{ old('planned_loading_date') }}">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/3 mx-auto">
+                                        <div class="relative">
+                                            <label for="planned_discharging_date"
+                                                class="leading-7 text-sm text-gray-600">揚げ日時</label>
+                                            <input type="date" id="planned_discharging_date" name="planned_discharging_date"
+                                                class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                                placeholder="揚地港を入力してください" value="{{ old('planned_discharging_date') }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="p-2 flex justify-around mt-4 w-full">
+                                        <button type="button"
+                                            onclick="location.href='{{ route('owner.voyages.index') }}'"
+                                            class="mx-auto text-white bg-gray-400 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">戻る</button>
+                                        <button type="submit"
+                                            class="mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">登録する</button>
+                                    </div>
+                                </div>
                                 </form>
                                 {{-- form --}}
                             </div>

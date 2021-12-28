@@ -84,7 +84,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{-- {{$owners->links()}} --}}
+                                {{$voyages->links()}}
                             </div>
 
                             <div class="flex justify-end mb-4 mt-2">
