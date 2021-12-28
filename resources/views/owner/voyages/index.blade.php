@@ -22,7 +22,10 @@
                                             <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 #</th>
-                                            <th
+                                                <th
+                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                @sortablelink('vessel_name', '船名')</th>
+                                                <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 航海番号</th>
                                             <th
@@ -31,9 +34,9 @@
                                             <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 荷主名</th>
-                                            <th
+                                            {{-- <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                                                船主名</th>
+                                                船主名</th> --}}
                                             <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 荷物名</th>
@@ -63,10 +66,11 @@
                                         @foreach ($voyages as $key => $voyage)
                                             <tr>
                                                 <td class="md:px-4 py-3">{{ $key + 1 }}</td>
+                                                <td class="md:px-4 py-3">{{ $voyage->vessel_name }}</td>
                                                 <td class="md:px-4 py-3">{{ $voyage->itinerary_number }}</td>
                                                 <td class="md:px-4 py-3">{{ $voyage->operator_name }}</td>
                                                 <td class="md:px-4 py-3">{{ $voyage->cargo_company_name }}</td>
-                                                <td class="md:px-4 py-3">{{ $voyage->owner_company_name }}</td>
+                                                {{-- <td class="md:px-4 py-3">{{ $voyage->owner_company_name }}</td> --}}
                                                 <td class="md:px-4 py-3">{{ $voyage->cargo_description }}</td>
                                                 {{-- <td class="md:px-4 py-3">{{ $voyage->cargo_amount }}</td> --}}
                                                 <td class="md:px-4 py-3">{{ $voyage->planned_loading_port }}</td>
@@ -84,7 +88,8 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{$voyages->links()}}
+                                {{-- {{$voyages->links()}} --}}
+                                {{ $voyages->appends(request()->query())->links() }}
                             </div>
 
                             <div class="flex justify-end mb-4 mt-2">

@@ -9,6 +9,7 @@ use App\Models\Ship;
 use App\Models\Image;
 use Validator; //この行を上に追加
 use Auth; //追加
+use Illuminate\Support\Facades\DB; //クエリビルダー
 
 class VoyagesController extends Controller
 {
@@ -26,10 +27,17 @@ class VoyagesController extends Controller
 
         // $allVoyages = Ship::with('voyages')->get();
         // dd($allVoyages->voyages->ship_id);
-        $voyages = Voyage::paginate(3);
+        // $voyages = Voyage::all()->from('voyages as v')->join('ships as s', function($join){
+        //     $join->on('s.id', '=', 'v.ship_id');
+        // })->paginate(5);
         // dd($ships);
 
-
+        $voyages = DB::table('voyages')
+        ->join('ships', 'ship_id', '=', 'ships.id')
+        ->orderBy('planned_loading_date', 'desc')
+        ->paginate(10);
+        
+        // dd($voyages);
 
 
         return view('owner.voyages.index', compact('voyages'));
@@ -127,7 +135,10 @@ class VoyagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $voyage = Voyage::findorFail($id);
+        // dd($voyage->id);
+        
+        return view('owner.voyages.edit', compact('voyage'));
     }
 
     /**
@@ -140,6 +151,39 @@ class VoyagesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // dd($request);
+        $input_voyage_data = Voyage::findorFail($id);
+        // $input_voyage_data->ship_id = 2; 
+        // $input_voyage_data->owner_id = Auth::id();
+        $input_voyage_data->itinerary_number = $request->itinerary_number;
+        $input_voyage_data->operator_name = $request->operator_name;
+        // $input_voyage_data->operator_id = 2;
+        $input_voyage_data->cargo_company_name = $request->cargo_company_name;
+        // $input_voyage_data->cargo_company_id = 3;        
+        $input_voyage_data->owner_company_name = $request->cargo_company_name;
+        // $input_voyage_data->owner_company_id = 1;        
+        $input_voyage_data->cargo_description = $request->cargo_description;
+        $input_voyage_data->cargo_amount = $request->cargo_amount;
+        $input_voyage_data->planned_loading_port = $request->planned_loading_port;
+        $input_voyage_data->planned_discharging_port = $request->planned_discharging_port;
+        $input_voyage_data->planned_loading_date = $request->planned_loading_date;
+        $input_voyage_data->planned_discharging_date = $request->planned_discharging_date;
+        $input_voyage_data->arrived_port_date = $request->arrived_port_date;
+        $input_voyage_data->loading_started_date = $request->loading_started_date;
+        $input_voyage_data->loading_completed_date = $request->loading_completed_date;
+        $input_voyage_data->loading_port_disported_date = $request->loading_port_disported_date;
+        $input_voyage_data->discharging_port_arrived_date = $request->discharging_port_arrived_date;
+        $input_voyage_data->discharging_start_date = $request->discharging_start_date;
+        $input_voyage_data->discharging_complete_date = $request->discharging_complete_date;
+        $input_voyage_data->discharging_port_disported_date = $request->discharging_port_disported_date;
+        $input_voyage_data->complete_flag = $request->complete_flag;
+        $input_voyage_data->save();
+        
+        $voyages = DB::table('voyages')
+        ->join('ships', 'ship_id', '=', 'ships.id')
+        ->orderBy('planned_loading_date', 'desc')
+        ->paginate(10);
+        return view('owner.voyages.index', compact('voyages'));
     }
 
     /**

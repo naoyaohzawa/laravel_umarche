@@ -12,6 +12,9 @@ class Voyage extends Model
 {
     use HasFactory;
 
+
+    
+
     public function ship()
     {
         return $this->belongsTo(Ship::class);
