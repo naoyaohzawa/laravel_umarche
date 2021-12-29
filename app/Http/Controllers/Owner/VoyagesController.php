@@ -49,6 +49,8 @@ class VoyagesController extends Controller
     {
         $owner_id = Auth::id();
         $ships = Ship::where('owner_id', $owner_id)->get();
+
+        
         return view('owner.voyages.create', compact('ships'));
     }
 
@@ -99,7 +101,14 @@ class VoyagesController extends Controller
         
         $input_voyage_data->save();
 
-        $voyages = Voyage::get();
+        $voyages = DB::table('voyages')
+        ->join('ships', 'ship_id', '=', 'ships.id')
+        ->orderBy('planned_loading_date', 'desc')
+        ->paginate(10);
+        
+        // dd($voyages);
+
+
         return view('owner.voyages.index', compact('voyages'));
     }
 
@@ -183,6 +192,9 @@ class VoyagesController extends Controller
         ->join('ships', 'ship_id', '=', 'ships.id')
         ->orderBy('planned_loading_date', 'desc')
         ->paginate(10);
+
+        // dd($voyages);
+
         return view('owner.voyages.index', compact('voyages'));
     }
 
