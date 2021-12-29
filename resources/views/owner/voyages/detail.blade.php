@@ -1,10 +1,21 @@
 <x-app-layout>
+    
+    
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            航海情報
-        </h2>
+        <ul class="flex border-b">
+            <li class="-mb-px mr-1">
+              <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold" href="#">航海情報</a>
+            </li>
+            <li class="mr-1">
+              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.voyages.edit', [$voyages[0]->id]) }}">航海情報更新</a>
+            </li>
+            <li class="mr-1">
+              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="#">書類作成</a>
+            </li>
+          </ul>
     </x-slot>
 
+    
 
     <div class="container w-full mx-auto md:w-auto sm:w-auto ">
 
@@ -42,11 +53,19 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">{{ $voyages[0]->planned_loading_port }} 着岸時刻:
-                                    {{ $voyages[0]->arrived_port_date }}</h3>
-                            </div>
+                            @if ($voyages[0]->arrived_port_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">{{ $voyages[0]->planned_loading_port }} 着岸時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">{{ $voyages[0]->planned_loading_port }} 着岸時刻:
+                                        {{ $voyages[0]->arrived_port_date }}</h3>
+                                </div>
+                            @endif
                         </div>
 
                         <div class="flex md:contents">
@@ -58,11 +77,21 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">積み荷役 開始時刻: {{ $voyages[0]->loading_started_date }}
-                                </h3>
-                            </div>
+                            @if ($voyages[0]->loading_started_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">積み荷役 開始時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">積み荷役 開始時刻:
+                                        {{ $voyages[0]->loading_started_date }}
+                                    </h3>
+                                </div>
+                            @endif
+
                         </div>
                         <div class="flex md:contents">
                             <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
@@ -73,11 +102,20 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">積み荷役 完了時刻:
-                                    {{ $voyages[0]->loading_completed_date }}</h3>
-                            </div>
+                            @if ($voyages[0]->loading_port_disported_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">積み荷役 完了時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">積み荷役 完了時刻:
+                                        {{ $voyages[0]->loading_completed_date }}</h3>
+                                </div>
+                            @endif
+
                         </div>
                         <div class="flex md:contents">
                             <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
@@ -88,11 +126,19 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">積み港 出航時刻:
-                                    {{ $voyages[0]->loading_port_disported_date }}</h3>
-                            </div>
+                            @if ($voyages[0]->loading_port_disported_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">積み港 出航時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">積み港 出航時刻:
+                                        {{ $voyages[0]->loading_port_disported_date }}</h3>
+                                </div>
+                            @endif
                         </div>
 
                     </div>
@@ -105,6 +151,7 @@
                 <h2 class="text-xl text-center font-semibold mb-6">揚げ港情報</h2>
                 <div class="container">
                     <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
+                        {{--  --}}
                         <div class="flex md:contents">
                             <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
                                 <div class="h-full w-6 flex items-center justify-center">
@@ -114,11 +161,21 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">{{ $voyages[0]->planned_discharging_port }} 到着時刻:
-                                    {{ $voyages[0]->discharging_port_arrived_date }}</h3>
-                            </div>
+                            @if ($voyages[0]->discharging_port_arrived_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">{{ $voyages[0]->planned_discharging_port }}
+                                        到着時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">{{ $voyages[0]->planned_discharging_port }}
+                                        到着時刻:
+                                        {{ $voyages[0]->discharging_port_arrived_date }}</h3>
+                                </div>
+                            @endif
                         </div>
 
                         <div class="flex md:contents">
@@ -130,11 +187,19 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">揚げ荷役 開始時刻:
-                                    {{ $voyages[0]->discharging_start_date }}</h3>
-                            </div>
+                            @if ($voyages[0]->discharging_start_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">揚げ荷役 開始時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">揚げ荷役 開始時刻:
+                                        {{ $voyages[0]->discharging_start_date }}</h3>
+                                </div>
+                            @endif
                         </div>
                         <div class="flex md:contents">
                             <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
@@ -145,11 +210,19 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">揚げ荷役 完了時刻:
-                                    {{ $voyages[0]->discharging_complete_date }}</h3>
-                            </div>
+                            @if ($voyages[0]->discharging_complete_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">揚げ荷役 完了時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">揚げ荷役 完了時刻:
+                                        {{ $voyages[0]->discharging_complete_date }}</h3>
+                                </div>
+                            @endif
                         </div>
                         <div class="flex md:contents">
                             <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
@@ -160,13 +233,20 @@
                                     <i class="fas fa-check-circle text-black"></i>
                                 </div>
                             </div>
-                            <div
-                                class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
-                                <h3 class="font-semibold text-base">揚げ港 離岸時刻:
-                                    {{ $voyages[0]->discharging_port_disported_date }}</h3>
-                            </div>
+                            @if ($voyages[0]->discharging_port_disported_date === null)
+                                <div
+                                    class="bg-gray-500 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-sm">揚げ港 離岸時刻:
+                                        未開始 もしくは更新前</h3>
+                                </div>
+                            @else
+                                <div
+                                    class="bg-sky-700 col-start-4 col-end-12 p-4 rounded-xl my-2 mr-auto shadow-md w-full">
+                                    <h3 class="font-semibold text-base">揚げ港 離岸時刻:
+                                        {{ $voyages[0]->discharging_port_disported_date }}</h3>
+                                </div>
+                            @endif
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -305,4 +385,6 @@
             }
         }
     </script>
+
+    
 </x-app-layout>

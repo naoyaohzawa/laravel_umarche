@@ -145,7 +145,9 @@ class VoyagesController extends Controller
     public function edit($id)
     {
         $voyage = Voyage::findorFail($id);
-        // dd($voyage->id);
+        // dd($voyage);
+        $ship_lists = Ship::where('id', $voyage->ship_id)->get();
+        
         
         return view('owner.voyages.edit', compact('voyage'));
     }
@@ -188,14 +190,16 @@ class VoyagesController extends Controller
         $input_voyage_data->complete_flag = $request->complete_flag;
         $input_voyage_data->save();
         
-        $voyages = DB::table('voyages')
-        ->join('ships', 'ship_id', '=', 'ships.id')
-        ->orderBy('planned_loading_date', 'desc')
-        ->paginate(10);
+        // $voyages = DB::table('voyages')
+        // ->join('ships', 'ship_id', '=', 'ships.id')
+        // ->orderBy('planned_loading_date', 'desc')
+        // ->paginate(10);
 
         // dd($voyages);
 
-        return view('owner.voyages.index', compact('voyages'));
+        return redirect()->route('owner.voyages.show', [$id]);
+        // return view('owner.voyages.index', compact('voyages'));
+        
     }
 
     /**
