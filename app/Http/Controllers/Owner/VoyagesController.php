@@ -212,4 +212,10 @@ class VoyagesController extends Controller
     {
         //
     }
+
+    public function shipinfo($id){
+
+        $ship_lists = Ship::where('id', $id)->get();
+        return view('owner.voyages.shipinfo', compact('ship_lists'));
+    }
 }

@@ -8,7 +8,7 @@
               <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold" href="" readonly>航海情報更新</a>
             </li>
             <li class="mr-1">
-              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="#">書類作成</a>
+                <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.documents.show', [$voyage->id]) }}">書類作成</a>
             </li>
           </ul>
     </x-slot>

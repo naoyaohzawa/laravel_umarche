@@ -14,6 +14,7 @@ use App\Http\Controllers\Owner\Auth\VerifyEmailController;
 use App\Http\Controllers\Owner\ShipsController;
 use App\Http\Controllers\Owner\VoyagesController;
 use App\Http\Controllers\Owner\ImagesController;
+use App\Http\Controllers\Owner\DocumentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,16 +33,23 @@ Route::get('/', function () {
 
 // shipsのフォルダ
 Route::resource('ships', ShipsController::class)
-    ->middleware('auth:owners')->except(['show']);
+    ->middleware('auth:owners');
 
 // voyagesのフォルダ
 Route::resource('voyages', VoyagesController::class)
     ->middleware('auth:owners');
 
+
 // 画像保存
 Route::resource('images', ImagesController::class)
     ->middleware('auth:owners');
 
+// 書類の独自メソッド
+Route::get('voyages/documents/{$id}/general_declaration', [DocumentsController::class, 'general'])->name('general_declaration');
+
+// 書類
+Route::resource('documents', DocumentsController::class)
+->middleware('auth:owners');
 
 
 Route::get('/dashboard', function () {

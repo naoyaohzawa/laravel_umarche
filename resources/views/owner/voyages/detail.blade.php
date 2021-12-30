@@ -10,15 +10,19 @@
               <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.voyages.edit', [$voyages[0]->id]) }}">航海情報更新</a>
             </li>
             <li class="mr-1">
-              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="#">書類作成</a>
+                {{-- <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.voyages.shipinfo', [$ship_lists[0]->id]) }}">航海情報更新</a> --}}
+              </li>
+            <li class="mr-1">
+              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.documents.show', [$voyages[0]->id]) }}">書類作成</a>
             </li>
           </ul>
     </x-slot>
 
-    
+    <div class="container w-full mx-auto md:w-auto sm:w-auto text-lg font-bold">
+        <h1>{{$ship_lists[0]->vessel_name}}の航海情報（航海番号: {{$voyages[0]->itinerary_number}}）</h1>
+    </div>
 
     <div class="container w-full mx-auto md:w-auto sm:w-auto ">
-
         <!-- script -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript">
@@ -311,80 +315,6 @@
         <!-- 画像の投稿 -->
 
     </div>
-
-    <div class=" w-full mx-auto overflow-auto">
-        <table class="table-auto w-full text-left whitespace-no-wrap">
-            <thead>
-                <tr>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        #</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        船名</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        航海番号</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        船社名</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        荷主名</th>
-                    {{-- <th
-                        class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        船主名</th> --}}
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        荷物名</th>
-                    {{-- <th
-                        class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        荷物量</th> --}}
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        荷上港</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        予定荷上げ日時</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        予定荷下港</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        予定荷下し日時</th>
-                    <th class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
-                        詳細ページ</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($voyages as $key => $voyage)
-                    <tr>
-                        <td class="md:px-4 py-3">{{ $key + 1 }}</td>
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}</td>
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}</td>
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}</td>
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}</td>
-                        {{-- <td class="md:px-4 py-3">{{ $voyage->owner_company_name }}</td> --}}
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}</td>
-                        {{-- <td class="md:px-4 py-3">{{ $voyage->cargo_amount }}</td> --}}
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}</td>
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}</td>
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}
-                        </td>
-                        <td class="md:px-4 py-3">{{ $voyages[0]->planned_loading_date }}
-                        </td>
-                        <td class="md:px-4 py-3 text-center">
-                            <button onclick="location.href='{{ route('owner.voyages.edit', [$voyage->id]) }}'"
-                                class="mx-auto text-white bg-indigo-400 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm">運航情報を更新</button>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-        {{-- {{$voyages->links()}} --}}
-        {{-- {{ $voyages->appends(request()->query())->links() }} --}}
-    </div>
-
-
-
-    <script>
-        function deletePost(e) {
-            'use strict';
-            if (confirm('本当に削除してもいいですか?')) {
-                document.getElementById('delete_' + e.dataset.id).submit();
-            }
-        }
-    </script>
 
     
 </x-app-layout>
