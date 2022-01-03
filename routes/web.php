@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+// テスト用
+use App\Http\Controllers\ComponentTestController;
+use App\Http\Controllers\LifecycleTestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +18,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('user.dashboard');
+})->middleware(['auth:users'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+// テスト用です
+Route::get('/component-test1', [ComponentTestController::class, 'showComponent1']);
+Route::get('/component-test2', [ComponentTestController::class, 'showComponent2']);
+Route::get('/servicecontainer', [LifecycleTestController::class, 'showServiceContainerTest']);
+Route::get('/serviceprovider', [LifecycleTestController::class, 'showServiceProviderTest']);
