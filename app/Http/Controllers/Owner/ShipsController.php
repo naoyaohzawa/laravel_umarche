@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Owner;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Ship;
+use App\Models\Owner;
 use Validator; //この行を上に追加
 use Auth; //追加
 
@@ -19,8 +20,11 @@ class ShipsController extends Controller
     public function index()
     {
         
-
-        $ships = Ship::get();
+        $owner_id = Auth::id();
+        // dd($owner_id);
+        $owners = Owner::where('id', $owner_id)->get();
+        $owner_company_id = $owners[0]->owner_company_id;
+        $ships = Ship::where('owner_company_id', $owner_company_id)->get();
         // dd($ships);
         return view('owner.ships.index', compact('ships'));
     }
