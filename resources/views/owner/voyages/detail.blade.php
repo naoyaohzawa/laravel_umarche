@@ -270,16 +270,18 @@
                     <div class="w-full sm:w-1/3 md:w-1/6 flex flex-col p-3">
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-col">
                             <div class="bg-cover h-48">
-                                <img src="/uploads/{{ $image->img_url }}">
+                                {{-- <img src="uploads/{{ $image->img_url }}"> --}}
+                                <img src="{{asset('uploads/' . $image->img_url)}}" alt="">
+                                
                             </div>
                             <div class="p-4 flex-1 flex flex-col" style="">
                                 <p class="mb-4 text-l">投稿日: {{ $image->updated_at->diffForHumans() }}</p>
                                 <div class="mb-4 text-grey-darker text-sm flex-1">
                                     <p>投稿者: 本船</p>
                                 </div>
-                                <a href="#"
+                                {{-- <a href="#"
                                     class="border-t border-grey-light pt-2 text-xs text-grey hover:text-red uppercase no-underline tracking-wide"
-                                    style="">Twitter</a>
+                                    style="">Twitter</a> --}}
                             </div>
                         </div>
                     </div>
