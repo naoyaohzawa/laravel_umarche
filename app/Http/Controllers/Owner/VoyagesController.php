@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Voyage;
 use App\Models\Ship;
 use App\Models\Image;
+use App\Models\Owner;
 use Validator; //この行を上に追加
 use Auth; //追加
 use Illuminate\Support\Facades\DB; //クエリビルダー
@@ -32,10 +33,19 @@ class VoyagesController extends Controller
         // })->paginate(5);
         // dd($ships);
 
+        $owner_id = Auth::id();
+        // dd($owner_id);
+        $owners = Owner::where('id', $owner_id)->get();
+        $owner_company_id = $owners[0]->owner_company_id;
+        // dd($owner_company_id);
+
         $voyages = DB::table('voyages')
         ->join('ships', 'ship_id', '=', 'ships.id')
+        ->where('voyages.owner_company_id', '=', $owner_company_id)
         ->orderBy('planned_loading_date', 'desc')
         ->paginate(10);
+
+        // dd($voyages);
         
         // dd($voyages);
 

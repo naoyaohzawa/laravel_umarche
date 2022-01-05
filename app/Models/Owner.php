@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Ship;
 use App\Models\Voyage;
+use App\Models\OwnersCompany;
 
 
 class Owner extends Authenticatable
@@ -22,6 +23,7 @@ class Owner extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'owner_company_id',
         'password',
     ];
 
@@ -43,6 +45,13 @@ class Owner extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function owner()
+    {
+        return $this->belongsTo(OwnersCompany::class);
+    }
+
 
     // Ship Moldeとのリレーション
     public function ships()

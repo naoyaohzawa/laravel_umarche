@@ -24,7 +24,7 @@ class ShipSeeder extends Seeder
                 'dwt' => '2500',
                 'mmsi' => '431101143',
                 'call_number' => 'JD2253',
-                'owner_company_id' => '2',
+                'owner_company_id' => '1',
                 'owner_id' => '1',
             ],
             [
@@ -35,7 +35,7 @@ class ShipSeeder extends Seeder
                 'dwt' => '2350',
                 'mmsi' => '431007895',
                 'call_number' => 'JD4009',
-                'owner_company_id' => '2',
+                'owner_company_id' => '1',
                 'owner_id' => '1',
             ],
             [
@@ -46,7 +46,7 @@ class ShipSeeder extends Seeder
                 'dwt' => '2350',
                 'mmsi' => '431007895',
                 'call_number' => 'JD4009',
-                'owner_company_id' => '2',
+                'owner_company_id' => '1',
                 'owner_id' => '2',
             ],
             [
@@ -57,7 +57,7 @@ class ShipSeeder extends Seeder
                 'dwt' => '2350',
                 'mmsi' => '431007895',
                 'call_number' => 'JD4009',
-                'owner_company_id' => '2',
+                'owner_company_id' => '1',
                 'owner_id' => '2',
             ],
             [
@@ -68,7 +68,7 @@ class ShipSeeder extends Seeder
                 'dwt' => '2350',
                 'mmsi' => '431007895',
                 'call_number' => 'JD4009',
-                'owner_company_id' => '3',
+                'owner_company_id' => '2',
                 'owner_id' => '2',
             ],
             [
@@ -79,7 +79,7 @@ class ShipSeeder extends Seeder
                 'dwt' => '2350',
                 'mmsi' => '431007895',
                 'call_number' => 'JD4009',
-                'owner_company_id' => '3',
+                'owner_company_id' => '2',
                 'owner_id' => '2',
             ],
         ]);

@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             OwnerSeeder::class,
             ShipSeeder::class,
             VoyageSeeder::class,
+            OwnersCompany::class,
         ]);
     }
 }
