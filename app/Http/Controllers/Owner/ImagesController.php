@@ -74,7 +74,7 @@ class ImagesController extends Controller
             $images->save();
     
             //public/uploadフォルダを作成
-            $target_path = public_path('/uploads/');
+            $target_path = public_path('uploads/');
     
             //ファイルをpublic/uploadフォルダに移動
             // Image::make($file)->resize(300, 300);
