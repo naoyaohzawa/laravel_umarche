@@ -7,6 +7,7 @@
 <body>
     {{-- $voyages[0]->planned_discharging_port --}}
 
+    <h1>hellow</h1>
     
 <div style="position:absolute;top:0.71in;left:0.86in;width:0.81in;line-height:0.22in;"><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">第</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS-PMincho;color:#000000">１</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:MS Mincho;color:#000000">号様式</span><span style="font-style:normal;font-weight:normal;font-size:11pt;font-family:TimesNewRomanPSMT;color:#000000"> </span><br/></SPAN></div>
 <div style="position:absolute;top:1.11in;left:3.36in;width:2.57in;line-height:0.21in;"><DIV style="position:relative; left:0.62in;"><span style="font-style:normal;font-weight:normal;font-size:14pt;font-family:MS Mincho;color:#000000">入</span><span style="font-style:normal;font-weight:normal;font-size:14pt;font-family:MS-PMincho;color:#000000"> </span></SPAN></DIV><br/></div>
