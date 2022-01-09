@@ -1,9 +1,12 @@
 <x-guest-layout>
     <x-auth-card>
+        荷主様・運航会社様・港湾会社様向け新規登録画面
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+            <div class="w-20">
+                <a href="/">
+                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                </a>
+            </div>
         </x-slot>
 
         <!-- Validation Errors -->
@@ -47,11 +50,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('user.login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('すでにご登録済み?') }}
                 </a>
 
                 <x-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('新規登録する') }}
                 </x-button>
             </div>
         </form>

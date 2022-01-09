@@ -28,7 +28,7 @@ use App\Http\Controllers\Owner\DocumentsController;
 */
 
 Route::get('/', function () {
-    return view('owner.welcome');
+    return view('top');
 });
 
 // shipsのフォルダ
