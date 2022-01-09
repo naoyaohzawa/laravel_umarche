@@ -17,7 +17,7 @@
     <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
     <style>
         .gradient {
-            background: linear-gradient(90deg, #2E86C1  0%, #D6EAF8  100%);
+            background: linear-gradient(90deg, #2E86C1 0%, #D6EAF8 100%);
         }
 
     </style>
@@ -30,11 +30,10 @@
             <div class="pl-4 flex items-center">
                 <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
                     href="#">
-                    <!--Icon from: http://www.potlabicons.com/ -->
-                    <div >
-                        <ul class="flex flex-wrap^reverse"  >
+                    <div>
+                        <ul class="flex flex-wrap^reverse">
                             <li>
-                                <img src="{{asset('images/logo.png')}}" alt="" class="w-8">
+                                <img src="{{ asset('images/logo.png') }}" alt="" class="w-8">
                             </li>
                             <li class="ml-2">アプリ名</li>
                         </ul>
@@ -46,7 +45,7 @@
                         <path class="plane-take-off"
                             d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z " />
                     </svg> --}}
-                    
+
                 </a>
             </div>
             <div class="block lg:hidden pr-4">
@@ -88,19 +87,20 @@
             <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
                 {{-- <p class="uppercase tracking-loose w-full">What business are you?</p> --}}
                 <h1 class="my-4 text-5xl font-bold leading-tight">
-                    内航船の管理・運航を<br>デジタルの力で変える
+                    内航船の管理・運航を<br>デジタルの力で進化する
                 </h1>
                 <p class="leading-normal text-2xl mb-8">
-                    荷主様、運航会社様、港湾会社様、船主様のための<br>クラウドアプリ
+                    荷主様、運航会社様、港湾会社様、船主様
+                    <br>向けクラウドアプリ
                 </p>
-                <button
+                {{-- <button
                     class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                     Subscribe
-                </button>
+                </button> --}}
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 py-6 text-center">
-                <img class="w-full md:w-99/100 z-50" src="{{asset('images/main.png')}}" />
+                <img class="w-full md:w-99/100 z-50" src="{{ asset('images/main.png') }}" />
             </div>
         </div>
     </div>
@@ -127,6 +127,92 @@
             </g>
         </svg>
     </div>
+    {{-- 早速使うsection --}}
+    <section class="bg-white border-b py-8">
+        <div class="max-w-5xl mx-auto m-8">
+            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                早速使ってみる
+            </h1>
+            <div class="w-full mb-4">
+                <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
+            </div>
+            <div class="flex flex-wrap justify-center">
+                <div class="sm:w-1/2 p-6">
+                    <h3 class="text-3xl text-center text-gray-800 font-bold leading-none mb-3">
+                        船主様・船長
+                    </h3>
+                    <h3 class="text-3xl text-center text-gray-800 font-bold leading-none mb-3">
+                        はこちら
+                    </h3>
+                    <div class="flex justify-center ">
+                        @if (Route::has('owner.login'))
+                            @auth('owners')
+                                <a href="{{ url('/owner/dashboard') }}">
+                                    <button id="navAction"
+                                        class="mx-auto lg:mx-0 hover:underline text-gray-800 
+                                bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
+                            font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 
+                            focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                        ログイン・新規登録
+                                    </button>
+                                </a>
+                            @else
+                                <a href="{{ route('owner.login') }}">
+                                    <button id="navAction"
+                                        class="mx-auto lg:mx-0 hover:underline text-gray-800 
+                            bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
+                            font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 
+                            focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                        ログイン・新規登録
+                                    </button>
+                                </a>
+                            @endauth
+                        @endif
+                    </div>
+                </div>
+                <div class="sm:w-1/2 p-6">
+                    <h3 class="text-3xl text-center text-gray-800 font-bold leading-none mb-3">
+                        荷主様・運航会社様・
+                    </h3>
+                    <h3 class="text-3xl text-center text-gray-800 font-bold leading-none mb-3">
+                        港湾会社様はこちら
+                    </h3>
+                    <div class="flex justify-center ">
+
+                        @if (Route::has('user.login'))
+                            @auth('users')
+                                <a href="{{ url('/dashboard') }}">
+                                    <button id="navAction"
+                                        class="mx-auto lg:mx-0 hover:underline text-gray-800 
+                                bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
+                            font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 
+                            focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                        ログイン・新規登録
+                                    </button>
+                                </a>
+                            @else
+                                <a href="{{ route('user.login') }}">
+                                    <button id="navAction"
+                                        class="mx-auto lg:mx-0 hover:underline text-gray-800 
+                                bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500
+                            font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 
+                            focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                        ログイン・新規登録
+                                    </button>
+                                </a>
+                            @endauth
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    {{-- 早速使うsection --}}
+
+    {{-- 特徴section --}}
     <section class="bg-white border-b py-8">
         <div class="container max-w-5xl mx-auto m-8">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
@@ -375,13 +461,16 @@
                             本船の最新情報や必要書類はクラウド上の画面ですぐに確認できます
                             <br />
                             <br />
-                            
+
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    {{-- 特徴section --}}
+
+    {{-- ポイントsection --}}
     <section class="bg-white border-b py-8">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
@@ -405,7 +494,7 @@
                 <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                     <div class="flex items-center justify-center">
                         <button
-                        class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                             お問い合せ
                         </button>
                     </div>
@@ -447,7 +536,7 @@
                 <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                     <div class="flex items-center justify-center">
                         <button
-                        class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                             お問い合せ
                         </button>
                     </div>
@@ -455,6 +544,9 @@
             </div>
         </div>
     </section>
+    {{-- ポイントsection --}}
+
+    {{-- 料金section --}}
     <section class="bg-gray-100 py-8">
         <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
@@ -497,7 +589,7 @@
                             <li class="border-b py-4">運航画面表示</li>
                             <li class="border-b py-4">書類作成機能</li>
                             <li class="border-b py-4">航海データ出力機能</li>
-                            
+
                         </ul>
                     </div>
                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
@@ -540,6 +632,9 @@
             </div>
         </div>
     </section>
+    {{-- 料金section --}}
+
+
     <!-- Change the colour #f8fafc to match the previous section colour -->
     <svg class="wave-top" viewBox="0 0 1439 147" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -567,6 +662,8 @@
             </g>
         </g>
     </svg>
+
+    {{-- 問合せsection --}}
     <section class="container mx-auto text-center py-6 mb-12">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
             デモ画面を問い合わせする
@@ -582,6 +679,8 @@
             問合せ画面
         </button>
     </section>
+    {{-- 問合せsection --}}
+
     <!--Footer-->
     <footer class="bg-white">
         <div class="container mx-auto px-8">
@@ -603,7 +702,8 @@
                     <p class="uppercase text-gray-500 md:mb-6">リンク</p>
                     <ul class="list-reset mb-6">
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">よくある問合せ</a>
+                            <a href="#"
+                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">よくある問合せ</a>
                         </li>
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                             <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">サポート</a>
@@ -618,8 +718,7 @@
                     <p class="uppercase text-gray-500 md:mb-6">規約関係</p>
                     <ul class="list-reset mb-6">
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">規約</a>
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">規約</a>
                         </li>
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                             <a href="#"
@@ -631,8 +730,7 @@
                     <p class="uppercase text-gray-500 md:mb-6">採用関係</p>
                     <ul class="list-reset mb-6">
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">採用情報</a>
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">採用情報</a>
                         </li>
                     </ul>
                 </div>

@@ -21,7 +21,7 @@ class CreateVoyagesTable extends Migration
             $table->string('operator_name')->nullable();
             $table->integer('operator_id')->nullable();
             $table->string('cargo_company_name')->nullable();
-            $table->integer('cargo_company_id')->nullable();
+        $table->integer('cargo_company_id')->nullable();
             $table->string('owner_company_name')->nullable();
             $table->integer('owner_company_id')->nullable();
             $table->string('cargo_description')->nullable();
