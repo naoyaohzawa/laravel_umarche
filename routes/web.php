@@ -31,6 +31,12 @@ Route::get('/', function () {
     return view('top');
 });
 
+Route::get('/login_for_all', function () {
+    return view('login_for_all');
+});
+
+// Route::get('/login_for_all', 'TopController@index');
+
 // Route::get('/', function () {
 //     return view('user.welcome');
 // });

@@ -1,10 +1,12 @@
 <x-guest-layout>
     <x-auth-card>
-        ユーザー用
+        荷主様・運航会社様・港湾会社様向けログインページ
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-blue-500" />
-            </a>
+            <div class="w-20">
+                <a href="/">
+                    <x-application-logo class="w-20 h-20 fill-current text-blue-500" />
+                </a>
+            </div>
         </x-slot>
 
         <!-- Session Status -->
@@ -44,14 +46,27 @@
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('user.password.request'))
                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('user.password.request') }}">
-                        {{ __('Forgot your password?') }}
+                        {{ __('パスワードをお忘れの方') }}
                     </a>
                 @endif
 
                 <x-button class="ml-3">
-                    {{ __('Log in') }}
+                    {{ __('ログイン') }}
                 </x-button>
             </div>
         </form>
+        <div class="mt-5">
+            まだ登録されていない方<br />
+            <div class="flex justify-center">
+                <a href="{{ route('user.register') }}"
+                    class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        新規登録へ
+                    </button>
+                </a>
+            </div>
+        </div>
     </x-auth-card>
 </x-guest-layout>
+
+
