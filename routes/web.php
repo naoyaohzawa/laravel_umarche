@@ -14,6 +14,7 @@ use App\Http\Controllers\Owner\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Owner\Auth\RegisteredUserController;
 use App\Http\Controllers\Owner\Auth\VerifyEmailController;
 use App\Http\Controllers\User\VoyagesController;
+use App\Http\Controllers\TopController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +28,12 @@ use App\Http\Controllers\User\VoyagesController;
 */
 
 Route::get('/', function () {
-    return view('user.welcome');
+    return view('top');
 });
+
+// Route::get('/', function () {
+//     return view('user.welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('user.dashboard');

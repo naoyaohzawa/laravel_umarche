@@ -62,15 +62,15 @@
                 id="nav-content">
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
                     <li class="mr-3">
-                        <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Active</a>
+                        <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">XXXとは</a>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                            href="#">link</a>
+                        <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                            href="#">ログイン</a>
                     </li>
                     <li class="mr-3">
-                        <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                            href="#">link</a>
+                        <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+                            href="#">新規登録</a>
                     </li>
                 </ul>
                 <button id="navAction"
@@ -88,10 +88,10 @@
             <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
                 {{-- <p class="uppercase tracking-loose w-full">What business are you?</p> --}}
                 <h1 class="my-4 text-5xl font-bold leading-tight">
-                    内航船の管理・運航をデジタルの力で変える
+                    内航船の管理・運航を<br>デジタルの力で変える
                 </h1>
                 <p class="leading-normal text-2xl mb-8">
-                    荷主様、運航会社様、港湾会社様、船主様のためのクラウドアプリ
+                    荷主様、運航会社様、港湾会社様、船主様のための<br>クラウドアプリ
                 </p>
                 <button
                     class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
@@ -403,10 +403,10 @@
                     </a>
                 </div>
                 <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-                    <div class="flex items-center justify-start">
+                    <div class="flex items-center justify-center">
                         <button
-                            class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                            Action
+                        class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            お問い合せ
                         </button>
                     </div>
                 </div>
@@ -414,15 +414,12 @@
             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <p class="w-full text-gray-600 text-xs md:text-sm px-6">
-                            xGETTING STARTED
-                        </p>
-                        <div class="w-full font-bold text-xl text-gray-800 px-6">
-                            Lorem ipsum dolor sit amet.
+                        <div class="w-full text-center font-bold text-3xl text-gray-800 px-6 mb-5 mt-5">
+                            書類作成の短縮
                         </div>
                         <p class="text-gray-800 text-base px-6 mb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo
-                            posuere et sit amet ligula.
+                            本船で運航記録をクラウド上で入力したら全ての書類が自動で作成されます。
+                            荷主様、運航会社様、代理店様もクラウドにアクセスすることでいつでも書類を確認できます。
                         </p>
                     </a>
                 </div>
@@ -430,7 +427,7 @@
                     <div class="flex items-center justify-center">
                         <button
                             class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                            Action
+                            お問い合せ
                         </button>
                     </div>
                 </div>
@@ -438,23 +435,20 @@
             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <p class="w-full text-gray-600 text-xs md:text-sm px-6">
-                            xGETTING STARTED
-                        </p>
-                        <div class="w-full font-bold text-xl text-gray-800 px-6">
-                            Lorem ipsum dolor sit amet.
+                        <div class="w-full text-center font-bold text-3xl text-gray-800 px-6 mb-5 mt-5">
+                            書類作成の短縮
                         </div>
                         <p class="text-gray-800 text-base px-6 mb-5">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo
-                            posuere et sit amet ligula.
+                            本船で運航記録をクラウド上で入力したら全ての書類が自動で作成されます。
+                            荷主様、運航会社様、代理店様もクラウドにアクセスすることでいつでも書類を確認できます。
                         </p>
                     </a>
                 </div>
                 <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
-                    <div class="flex items-center justify-end">
+                    <div class="flex items-center justify-center">
                         <button
-                            class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                            Action
+                        class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            お問い合せ
                         </button>
                     </div>
                 </div>
@@ -464,7 +458,7 @@
     <section class="bg-gray-100 py-8">
         <div class="container mx-auto px-2 pt-4 pb-12 text-gray-800">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                Pricing
+                利用料金
             </h1>
             <div class="w-full mb-4">
                 <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
@@ -473,23 +467,23 @@
                 <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
                     <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
                         <div class="p-8 text-3xl font-bold text-center border-b-4">
-                            Free
+                            無料
                         </div>
                         <ul class="w-full text-center text-sm">
-                            <li class="border-b py-4">Thing</li>
-                            <li class="border-b py-4">Thing</li>
-                            <li class="border-b py-4">Thing</li>
+                            <li class="border-b py-4">デモ画面利用</li>
+                            <li class="border-b py-4">画像投稿機能</li>
+                            <li class="border-b py-4">無料期間のみデータ保存</li>
                         </ul>
                     </div>
                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                            £0
-                            <span class="text-base">for one user</span>
+                            無料
+                            <span class="text-base">1ヶ月</span>
                         </div>
                         <div class="flex items-center justify-center">
                             <button
                                 class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                                Sign Up
+                                新規登録
                             </button>
                         </div>
                     </div>
@@ -497,24 +491,24 @@
                 <div
                     class="flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-white mt-4 sm:-mt-6 shadow-lg z-10">
                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
-                        <div class="w-full p-8 text-3xl font-bold text-center">Basic</div>
+                        <div class="w-full p-8 text-3xl font-bold text-center">通常版</div>
                         <div class="h-1 w-full gradient my-0 py-0 rounded-t"></div>
                         <ul class="w-full text-center text-base font-bold">
-                            <li class="border-b py-4">Thing</li>
-                            <li class="border-b py-4">Thing</li>
-                            <li class="border-b py-4">Thing</li>
-                            <li class="border-b py-4">Thing</li>
+                            <li class="border-b py-4">運航画面表示</li>
+                            <li class="border-b py-4">書類作成機能</li>
+                            <li class="border-b py-4">航海データ出力機能</li>
+                            
                         </ul>
                     </div>
                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div class="w-full pt-6 text-4xl font-bold text-center">
-                            £x.99
-                            <span class="text-base">/ per user</span>
+                            1万円
+                            <span class="text-base">/ 1ユーザー 1ヶ月</span>
                         </div>
                         <div class="flex items-center justify-center">
                             <button
                                 class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                                Sign Up
+                                新規登録
                             </button>
                         </div>
                     </div>
@@ -522,23 +516,23 @@
                 <div class="flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-white mt-4">
                     <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow">
                         <div class="p-8 text-3xl font-bold text-center border-b-4">
-                            Pro
+                            カスタム版
                         </div>
                         <ul class="w-full text-center text-sm">
-                            <li class="border-b py-4">Thing</li>
-                            <li class="border-b py-4">Thing</li>
-                            <li class="border-b py-4">Thing</li>
+                            <li class="border-b py-4">運航画面表示</li>
+                            <li class="border-b py-4">書類作成機能</li>
+                            <li class="border-b py-4">航海データ出力機能</li>
                         </ul>
                     </div>
                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
-                            £x.99
-                            <span class="text-base">/ per user</span>
+                            100億円
+                            <span class="text-base">/ 永年無制限利用</span>
                         </div>
                         <div class="flex items-center justify-center">
                             <button
                                 class="mx-auto lg:mx-0 hover:underline gradient text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                                Sign Up
+                                新規登録
                             </button>
                         </div>
                     </div>
@@ -575,17 +569,17 @@
     </svg>
     <section class="container mx-auto text-center py-6 mb-12">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-white">
-            Call to Action
+            デモ画面を問い合わせする
         </h1>
         <div class="w-full mb-4">
             <div class="h-1 mx-auto bg-white w-1/6 opacity-25 my-0 py-0 rounded-t"></div>
         </div>
         <h3 class="my-4 text-3xl leading-tight">
-            Main Hero Message to sell yourself!
+            運航管理をデジタル化する
         </h3>
         <button
             class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-            Action!
+            問合せ画面
         </button>
     </section>
     <!--Footer-->
@@ -602,17 +596,17 @@
                             <path class="plane-take-off"
                                 d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z " />
                         </svg>
-                        LANDING
+                        アプリ名
                     </a>
                 </div>
                 <div class="flex-1">
-                    <p class="uppercase text-gray-500 md:mb-6">Links</p>
+                    <p class="uppercase text-gray-500 md:mb-6">リンク</p>
                     <ul class="list-reset mb-6">
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">よくある問合せ</a>
                         </li>
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">サポート</a>
                         </li>
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                             <a href="#"
@@ -621,49 +615,35 @@
                     </ul>
                 </div>
                 <div class="flex-1">
-                    <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+                    <p class="uppercase text-gray-500 md:mb-6">規約関係</p>
                     <ul class="list-reset mb-6">
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                             <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">規約</a>
                         </li>
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                             <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">秘密保持方針</a>
                         </li>
                     </ul>
                 </div>
                 <div class="flex-1">
-                    <p class="uppercase text-gray-500 md:mb-6">Social</p>
+                    <p class="uppercase text-gray-500 md:mb-6">採用関係</p>
                     <ul class="list-reset mb-6">
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                             <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
-                        </li>
-                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
-                        </li>
-                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
+                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">採用情報</a>
                         </li>
                     </ul>
                 </div>
                 <div class="flex-1">
-                    <p class="uppercase text-gray-500 md:mb-6">Company</p>
+                    <p class="uppercase text-gray-500 md:mb-6">会社概要</p>
                     <ul class="list-reset mb-6">
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official
-                                Blog</a>
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">運営会社</a>
                         </li>
                         <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About
-                                Us</a>
-                        </li>
-                        <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                            <a href="#"
-                                class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
+                            <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">問合せ先</a>
                         </li>
                     </ul>
                 </div>
