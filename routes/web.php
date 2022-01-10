@@ -27,11 +27,11 @@ use App\Http\Controllers\TopController;
 |
 */
 
-Route::get('/', function () {
+Route::get('top', function () {
     return view('top');
 });
 
-Route::get('/login_for_all', function () {
+Route::get('login_for_all', function () {
     return view('login_for_all');
 });
 

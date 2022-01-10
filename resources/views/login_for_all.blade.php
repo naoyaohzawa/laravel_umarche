@@ -27,7 +27,7 @@
     <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div class="pl-4 flex items-center">
             <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                href="#">
+                href="{{ url('top') }}">
                 <div>
                     <ul class="flex flex-wrap^reverse">
                         <li>
@@ -59,7 +59,7 @@
             id="nav-content">
             <ul class="list-reset lg:flex justify-end flex-1 items-center">
                 <li class="mr-3">
-                    <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="{{ url('/') }}">トップページに戻る</a>
+                    <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="{{ url('top') }}">トップページに戻る</a>
                 </li>
             </ul>
         </div>
