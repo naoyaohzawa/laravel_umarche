@@ -29,7 +29,7 @@
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
                 <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                    href="#">
+                    href="{{ url('top') }}">
                     <div>
                         <ul class="flex flex-wrap^reverse">
                             <li>
@@ -65,11 +65,11 @@
                     </li>
                     <li class="mr-3">
                         <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                        href="/login_for_all">ログイン</a>
+                        href="{{url('login_for_all')}}">ログイン</a>
                     </li>
                     <li class="mr-3">
                         <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
-                            href="#">新規登録</a>
+                            href="{{url('login_for_all')}}">新規登録</a>
                     </li>
                 </ul>
                 <button id="navAction"
