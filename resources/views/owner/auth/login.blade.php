@@ -3,7 +3,7 @@
         船主様・船長向けログインページ
         <x-slot name="logo">
             <div class="w-20">
-                <a href="{{ url('top') }}">
+                <a href="{{ url('/') }}">
                     <x-application-logo class="w-20 h-20 fill-current text-blue-500" />
                 </a>
             </div>

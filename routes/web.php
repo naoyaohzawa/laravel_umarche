@@ -27,7 +27,7 @@ use App\Http\Controllers\TopController;
 |
 */
 
-Route::get('top', function () {
+Route::get('/', function () {
     return view('top');
 });
 
