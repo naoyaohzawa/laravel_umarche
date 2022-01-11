@@ -1,1 +1,1 @@
-<img src="{{asset("images/logo.png")}}" alt="">
+<img src="{{asset("images/logo_transparent_background.png")}}" alt="">

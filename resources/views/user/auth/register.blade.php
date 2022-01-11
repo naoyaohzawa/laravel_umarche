@@ -2,7 +2,7 @@
     <x-auth-card>
         荷主様・運航会社様・港湾会社様向け新規登録画面
         <x-slot name="logo">
-            <div class="w-20">
+            <div class="w-80">
                 <a href="{{ url('/') }}">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                 </a>
