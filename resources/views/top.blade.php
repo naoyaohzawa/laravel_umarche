@@ -25,7 +25,7 @@
 
 <body class="leading-normal tracking-normal text-white gradient" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
-    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+    <nav id="header" class="fixed w-full z-30 top-0 text-white bg-white fixed">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div class="pl-4 flex items-center">
                 <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
@@ -33,9 +33,9 @@
                     <div>
                         <ul class="flex flex-wrap^reverse">
                             <li>
-                                <img src="{{ asset('images/logo.png') }}" alt="" class="w-8">
+                                <img src="{{ asset('images/logo_transparent_background.png') }}" alt="" class="w-80">
                             </li>
-                            <li class="ml-2">アプリ名</li>
+                            {{-- <li class="ml-2">アプリ名</li> --}}
                         </ul>
                     </div>
                     {{-- <svg class="h-8 fill-current inline" src="{{asset('images/logo.png')}}"
@@ -61,7 +61,7 @@
                 id="nav-content">
                 <ul class="list-reset lg:flex justify-end flex-1 items-center">
                     <li class="mr-3">
-                        <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">XXXとは</a>
+                        <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">SEATASK シータスクとは</a>
                     </li>
                     <li class="mr-3">
                         <a class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
@@ -228,8 +228,8 @@
                 <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
             <div class="flex flex-wrap">
-                <div class="w-5/6 sm:w-1/2 p-6">
-                    <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                <div class="w-6/6 sm:w-1/2 p-6">
+                    <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3 text-center">
                         手書きとFAXから脱却
                     </h3>
                     <p class="text-gray-600 mb-8">
@@ -460,7 +460,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 p-6 mt-6">
                     <div class="align-middle">
-                        <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+                        <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3 text-center">
                             荷主様、運航会社様、船長が最新情報をクラウドで共有
                         </h3>
                         <p class="text-gray-600 mb-8">
@@ -692,16 +692,10 @@
         <div class="container mx-auto px-8">
             <div class="w-full flex flex-col md:flex-row py-6">
                 <div class="flex-1 mb-6 text-black">
-                    <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+                    <a class="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="{{url('/')}}">
                         <!--Icon from: http://www.potlabicons.com/ -->
-                        <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512.005 512.005">
-                            <rect fill="#2a2a31" x="16.539" y="425.626" width="479.767" height="50.502"
-                                transform="matrix(1,0,0,1,0,0)" />
-                            <path class="plane-take-off"
-                                d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z " />
-                        </svg>
-                        アプリ名
+                        
+                        <img src="{{ asset('images/logo_transparent_background.png') }}" alt="" class="w-40">
                     </a>
                 </div>
                 <div class="flex-1">

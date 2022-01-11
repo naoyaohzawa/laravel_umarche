@@ -848,6 +848,9 @@ select {
 .h-48 {
   height: 12rem;
 }
+.h-40 {
+  height: 10rem;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -910,6 +913,15 @@ select {
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-80 {
+  width: 20rem;
+}
+.w-40 {
+  width: 10rem;
+}
+.w-60 {
+  width: 15rem;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -1984,6 +1996,10 @@ select {
 
   .sm\:text-left {
     text-align: left;
+  }
+
+  .sm\:text-center {
+    text-align: center;
   }
 
   .sm\:text-right {
