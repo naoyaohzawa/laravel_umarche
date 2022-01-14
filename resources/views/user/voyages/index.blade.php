@@ -12,10 +12,11 @@
                         <div class="container md:px-5 py12 mx-auto">
                             <x-flash-message status="session('status')" />
                             
-                            <div class=" w-full mx-auto overflow-auto">
-                                <table class="table-auto w-full text-left whitespace-no-wrap">
+                            <div class="container">
+                                @foreach ($voyages as $key => $voyage)
+                                <table class="w-full sm:block flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
                                     <thead>
-                                        <tr>
+                                        <tr class=" flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
                                             <th
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 #</th>
@@ -53,13 +54,12 @@
                                                 class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 予定荷下し日時</th>
                                             <th
-                                                class="md:px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
+                                                class="md:px-4 hidden  py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">
                                                 詳細ページ</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach ($voyages as $key => $voyage)
-                                            <tr>
+                                    <tbody class="flex-1 sm:flex-none">
+                                            <tr class="flex flex-col flex-no wrap sm:table-row mb-2 text-sm sm:mb-0">
                                                 <td class="md:px-4 py-3">{{ $key + 1 }}</td>
                                                 <td class="md:px-4 py-3">{{ $voyage->vessel_name }}</td>
                                                 <td class="md:px-4 py-3">{{ $voyage->itinerary_number }}</td>
@@ -74,15 +74,20 @@
                                                 </td>
                                                 <td class="md:px-4 py-3">{{ $voyage->planned_discharging_date }}
                                                 </td>
-                                                <td class="md:px-4 py-3 text-center">
-                                                    <button
+                                                <td class="md:px-4 py-3 text-center hidden sm:block">
+                                                    <button 
                                                         onclick="location.href='{{ route('user.voyages.show', [$voyage->id]) }}'"
-                                                        class="mx-auto text-white bg-indigo-400 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm">詳細へ移動</button>
+                                                        class=" mx-auto text-white bg-indigo-400 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm">詳細へ移動</button>
                                                 </td>
                                             </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
+                                    <div class="md:px-4 py-3 flex justfity-center  text-center">
+                                        <button 
+                                            onclick="location.href='{{ route('user.voyages.show', [$voyage->id]) }}'"
+                                            class="mx-auto visible sm:hidden mx-auto text-white bg-indigo-400 border-0 py-2 px-2 focus:outline-none hover:bg-indigo-600 rounded text-sm">詳細へ移動</button>
+                                    </div>
+                                    @endforeach
                                 {{$voyages->links()}}
                                 {{-- {{ $voyages->appends(request()->query())->links() }} --}}
                             </div>
@@ -105,6 +110,25 @@
         </div>
     </div>
 
+    <style>
+        @media (min-width: 640px) {
+          table {
+            display: inline-table !important;
+          }
+      
+          thead tr:not(:first-child) {
+            display: none;
+          }
+        }
+      
+        td:not(:last-child) {
+          border-bottom: 0;
+        }
+      
+        th:not(:last-child) {
+          border-bottom: 2px solid rgba(0, 0, 0, .1);
+        }
+      </style>
 
     <script>
         function deletePost(e) {
