@@ -4,10 +4,10 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <div class="w-12">
+                <div class="shrink-1 flex items-center w-20">
+                    <div class="">
                         <a href="{{ route('owner.dashboard') }}">
-                            <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                            <x-application-logo class="block h-10 w-50 fill-current text-gray-600" />
                         </a>
                     </div>
                 </div>
