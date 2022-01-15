@@ -8,6 +8,7 @@ use App\Models\Image;
 use Validator; //この行を上に追加
 use Auth; //追加
 use Illuminate\Support\Str; //画像ファイル名（追加）
+use InterventionImage; // intervention/imageライブラリの読み込み
 
 class ImagesController extends Controller
 {
