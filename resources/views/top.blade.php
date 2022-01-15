@@ -101,7 +101,7 @@
             </div>
             <!--Right Col-->
             <div class="w-full md:w-3/5 py-6 text-center">
-                <img class="w-full md:w-99/100 z-50" src="{{ asset('images/main.png') }}" />
+                <img class="w-full md:w-99/100 z-50" src="{{ asset('images/main_image.png') }}" />
             </div>
         </div>
     </div>
