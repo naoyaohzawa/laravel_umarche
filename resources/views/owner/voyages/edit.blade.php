@@ -30,7 +30,7 @@
                                     @method('PUT')
                                     @csrf
                                     <div class="flex flex-wrap -m-2">
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="itinerary_number"
                                                     class="leading-7 text-sm text-gray-600">航路番号</label>
@@ -41,7 +41,7 @@
                                                     value="{{ $voyage->itinerary_number }}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="operator_name"
                                                     class="leading-7 text-sm text-gray-600">海運会社名</label>
@@ -50,7 +50,7 @@
                                                     placeholder="海運会社を入力してください" value="{{ $voyage->operator_name }}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="cargo_company_name"
                                                     class="leading-7 text-sm text-gray-600">荷主名</label>
@@ -60,7 +60,7 @@
                                                     value="{{ $voyage->cargo_company_name }}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="cargo_description"
                                                     class="leading-7 text-sm text-gray-600">荷物名</label>
@@ -70,7 +70,7 @@
                                                     value="{{ $voyage->cargo_description }}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="cargo_amount"
                                                     class="leading-7 text-sm text-gray-600">荷物量（DWT）</label>
@@ -80,7 +80,7 @@
                                                     value="{{ $voyage->cargo_amount }}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="planned_loading_port"
                                                     class="leading-7 text-sm text-gray-600">積地港</label>
@@ -90,7 +90,7 @@
                                                     value="{{ $voyage->planned_loading_port }}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="planned_discharging_port"
                                                     class="leading-7 text-sm text-gray-600">揚地港</label>
@@ -103,7 +103,7 @@
                                         </div>
 
 
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="planned_loading_date"
                                                     class="leading-7 text-sm text-gray-600">積み日時</label>
@@ -114,7 +114,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="planned_discharging_date"
                                                     class="leading-7 text-sm text-gray-600">揚げ日時</label>
@@ -127,7 +127,7 @@
                                         </div>
 
                                         {{-- 追加情報 --}}
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="arrived_port_date"
                                                     class="leading-7 text-sm text-gray-600">積地港 着岸時間</label>
@@ -139,7 +139,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="loading_started_date"
                                                     class="leading-7 text-sm text-gray-600">積み荷役 開始時間</label>
@@ -149,7 +149,7 @@
                                                     placeholder="開始時刻を入力してください" value="{{str_replace(" ", "T", $voyage->loading_started_date)}}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="loading_completed_date"
                                                     class="leading-7 text-sm text-gray-600">積み荷役 完了時間</label>
@@ -160,7 +160,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="loading_port_disported_date"
                                                     class="leading-7 text-sm text-gray-600">積地港 離岸時間</label>
@@ -170,7 +170,7 @@
                                                     placeholder="積地離岸時刻を入力してください" value="{{str_replace(" ", "T", $voyage->loading_port_disported_date)}}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="discharging_port_arrived_date"
                                                     class="leading-7 text-sm text-gray-600">揚地港 着岸時間</label>
@@ -180,7 +180,7 @@
                                                     placeholder="揚地着岸時刻を入力してください" value="{{str_replace(" ", "T", $voyage->discharging_port_arrived_date)}}">
                                             </div>
                                         </div>
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="discharging_start_date"
                                                     class="leading-7 text-sm text-gray-600">揚げ荷役 開始時間</label>
@@ -191,7 +191,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="discharging_complete_date"
                                                     class="leading-7 text-sm text-gray-600">揚げ荷役 完了時間</label>
@@ -202,7 +202,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label for="discharging_port_disported_date"
                                                     class="leading-7 text-sm text-gray-600">揚げ港 離岸時間</label>
@@ -213,7 +213,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="p-2 w-1/3 mx-auto">
+                                        <div class="p-2 sm:w-1/3 mx-auto">
                                             <div class="relative">
                                                 <label class="form-check-label inline-block text-gray-800"
                                                         for="flexSwitchCheckDefault">この航海が完了したらCheck</label>
