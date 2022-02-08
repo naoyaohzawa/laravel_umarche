@@ -47,6 +47,7 @@ Route::resource('images', ImagesController::class)
 // 書類の独自メソッド
 Route::get('voyages/documents/{$id}/general_declaration', [DocumentsController::class, 'general'])->name('general_declaration');
 
+
 // 書類
 Route::resource('documents', DocumentsController::class)
 ->middleware('auth:owners');

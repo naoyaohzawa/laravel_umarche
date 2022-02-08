@@ -56,9 +56,9 @@
                                             <tr>
                                                 {{-- <td class="md:px-4 py-3">{{ $key + 1 }}</td> --}}
                                                 <td class="md:px-4 py-3">
-                                                    <a 
+                                                    {{-- <a 
                                                     href="{{ route('owner.general_declaration', [$voyages[0]->id]) }}"
-                                                        class="mx-auto text-white bg-indigo-400 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded ">リンク先へ飛ぶ</a>
+                                                        class="mx-auto text-white bg-indigo-400 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded ">リンク先へ飛ぶ</a> --}}
                                                 </td>
                                                 <td class="md:px-4 py-3 text-center">
 

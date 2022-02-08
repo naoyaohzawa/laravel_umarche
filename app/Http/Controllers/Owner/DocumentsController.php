@@ -23,7 +23,7 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-        
+        dd('docu');
         // $voyages = DB::table('voyages')
         // ->join('ships', 'ship_id', '=', 'ships.id')
         // ->where('id', $id)

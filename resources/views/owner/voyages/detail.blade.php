@@ -15,6 +15,10 @@
             <li class="mr-1">
               <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.documents.show', [$voyages[0]->id]) }}">書類作成</a>
             </li>
+            {{-- documents index --}}
+            <li class="mr-1">
+                <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.documents.index', [$voyages[0]->id]) }}">書類リスト</a>
+              </li>
           </ul>
     </x-slot>
 
