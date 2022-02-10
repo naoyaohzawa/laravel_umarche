@@ -16,12 +16,12 @@
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased min-h-screen">
         <div class="max-h-screen bg-gray-100">
             
             {{-- 追加 --}}
             <div class="flex">
-                <div class="w-1/6 h-full">
+                <div class="w-1/6">
                     @if(auth('admin')->user())
                         @include('layouts.admin-navigation')
                     @elseif(auth('owners')->user())    

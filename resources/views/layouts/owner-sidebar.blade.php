@@ -12,6 +12,7 @@
                         <a href="{{ route('owner.dashboard') }}">
                             <x-application-logo class="block h-10 w-50 fill-current text-gray-600" />
                         </a>
+                    
                     </div>
                     <ul class="mt-12">
 

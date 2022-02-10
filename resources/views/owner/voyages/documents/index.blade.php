@@ -8,20 +8,23 @@
     <x-slot name="header">
         <ul class="flex border-b">
             <li class="-mb-px mr-1">
-                {{-- <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{route('owner.voyages.show', [$voyage->id])}}">航海情報</a> --}}
+              <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-blue-700 font-semibold" href="#">航海情報</a>
             </li>
             <li class="mr-1">
-              {{-- <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.voyages.edit', [$voyages[0]->id]) }}">航海情報更新</a> --}}
+              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.voyages.edit', [$voyages[0]->id]) }}">航海情報更新</a>
             </li>
             <li class="mr-1">
                 {{-- <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.voyages.shipinfo', [$ship_lists[0]->id]) }}">航海情報更新</a> --}}
               </li>
             <li class="mr-1">
-              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="">書類作成</a>
+              <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.documents.show', [$voyages[0]->id]) }}">書類作成</a>
             </li>
+            {{-- documents index --}}
+            <li class="mr-1">
+                <a class="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 hover:bg-gray-200 hover:rounded-md font-semibold" href="{{ route('owner.documents.index', [$voyages[0]->id]) }}">書類リスト</a>
+              </li>
           </ul>
     </x-slot>
-
     
 
     <div class="py-12">
