@@ -457,10 +457,10 @@
                 <div class="w-full sm:w-1/2 p-6 mt-6">
                     <div class="align-middle">
                         <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3 text-center">
-                            荷主様、運航会社様、船長が最新情報をクラウドで共有
+                            最新の運航状況をクラウドで共有
                         </h3>
                         <p class="text-gray-600 mb-8">
-                            本船の最新情報や必要書類はクラウド上の画面ですぐに確認できます
+                            運航会社様、船長、港湾会社様が本船の最新情報や必要書類はクラウド上の画面ですぐに確認でき、コニュニケーションの効率化を実現できます。
                             <br />
                             <br />
 
@@ -625,7 +625,7 @@
                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
                             お問合せ
-                            <span class="text-base">/ 永年無制限利用</span>
+                            <span class="text-base">/ 大規模利用</span>
                         </div>
                         <div class="flex items-center justify-center">
                             <a href="{{ url('login_for_all') }}">
