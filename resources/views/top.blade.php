@@ -73,10 +73,7 @@
                             href="{{ url('login_for_all') }}">新規登録</a>
                     </li>
                 </ul>
-                <button id="navAction"
-                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Action
-                </button>
+                
             </div>
         </div>
         <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -509,11 +506,10 @@
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                         <div class="w-full text-center font-bold text-3xl text-gray-800 px-6 mb-5 mt-5">
-                            書類作成の短縮
+                            コミュニケーションの効率化
                         </div>
                         <p class="text-gray-800 text-base px-6 mb-5">
-                            本船で運航記録をクラウド上で入力したら全ての書類が自動で作成されます。
-                            荷主様、運航会社様、代理店様もクラウドにアクセスすることでいつでも書類を確認できます。
+                            現場の状況を関係者で画面上でリアルタイムに共有することでコミュニケーションを効率化します。
                         </p>
                     </a>
                 </div>
@@ -530,11 +526,12 @@
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                         <div class="w-full text-center font-bold text-3xl text-gray-800 px-6 mb-5 mt-5">
-                            書類作成の短縮
+                            データをクラウドで管理
                         </div>
                         <p class="text-gray-800 text-base px-6 mb-5">
-                            本船で運航記録をクラウド上で入力したら全ての書類が自動で作成されます。
-                            荷主様、運航会社様、代理店様もクラウドにアクセスすることでいつでも書類を確認できます。
+                            これまでの紙やエクセルで管理していた運航データを管理することで
+                            いつでもどこでも確認することができます。
+                            
                         </p>
                     </a>
                 </div>
