@@ -73,10 +73,7 @@
                             href="{{ url('login_for_all') }}">新規登録</a>
                     </li>
                 </ul>
-                <button id="navAction"
-                    class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Action
-                </button>
+                
             </div>
         </div>
         <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
@@ -460,10 +457,10 @@
                 <div class="w-full sm:w-1/2 p-6 mt-6">
                     <div class="align-middle">
                         <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3 text-center">
-                            荷主様、運航会社様、船長が最新情報をクラウドで共有
+                            最新の運航状況をクラウドで共有
                         </h3>
                         <p class="text-gray-600 mb-8">
-                            本船の最新情報や必要書類はクラウド上の画面ですぐに確認できます
+                            運航会社様、船長、港湾会社様が本船の最新情報や必要書類はクラウド上の画面ですぐに確認でき、コニュニケーションの効率化を実現できます。
                             <br />
                             <br />
 
@@ -509,11 +506,10 @@
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                         <div class="w-full text-center font-bold text-3xl text-gray-800 px-6 mb-5 mt-5">
-                            書類作成の短縮
+                            コミュニケーションの効率化
                         </div>
                         <p class="text-gray-800 text-base px-6 mb-5">
-                            本船で運航記録をクラウド上で入力したら全ての書類が自動で作成されます。
-                            荷主様、運航会社様、代理店様もクラウドにアクセスすることでいつでも書類を確認できます。
+                            現場の状況を関係者で画面上でリアルタイムに共有することでコミュニケーションを効率化します。
                         </p>
                     </a>
                 </div>
@@ -530,11 +526,12 @@
                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                         <div class="w-full text-center font-bold text-3xl text-gray-800 px-6 mb-5 mt-5">
-                            書類作成の短縮
+                            データをクラウドで管理
                         </div>
                         <p class="text-gray-800 text-base px-6 mb-5">
-                            本船で運航記録をクラウド上で入力したら全ての書類が自動で作成されます。
-                            荷主様、運航会社様、代理店様もクラウドにアクセスすることでいつでも書類を確認できます。
+                            これまでの紙やエクセルで管理していた運航データを管理することで
+                            いつでもどこでも確認することができます。
+                            
                         </p>
                     </a>
                 </div>
@@ -628,7 +625,7 @@
                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow p-6">
                         <div class="w-full pt-6 text-3xl text-gray-600 font-bold text-center">
                             お問合せ
-                            <span class="text-base">/ 永年無制限利用</span>
+                            <span class="text-base">/ 大規模利用</span>
                         </div>
                         <div class="flex items-center justify-center">
                             <a href="{{ url('login_for_all') }}">

@@ -42,8 +42,8 @@
     </div>
 
     {{-- 運航情報start --}}
-    <div class="container mx-auto flex  bg-sky-100">
-        <div class="container mx-auto w-1/2">
+    <div class="container mx-auto flex flex-wrap bg-sky-100">
+        <div class="container mx-auto md:w-1/2 sm:w-1/2">
             <div class="p-4 mt-4">
                 <h2 class="text-xl text-center font-semibold mb-6">積み港情報</h2>
                 <div class="container">
@@ -150,7 +150,7 @@
             </div>
         </div>
 
-        <div class="container mx-auto w-1/2 ">
+        <div class="container mx-auto md:w-1/2 sm:w-1/2 ">
             <div class="p-4 mt-4">
                 <h2 class="text-xl text-center font-semibold mb-6">揚げ港情報</h2>
                 <div class="container">
@@ -295,8 +295,7 @@
         <h4>新しい本船画像を投稿する</h4>
         <form action="{{ route('owner.images.store') }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-
-            <div class="flex">
+            <div class="flex flex-wrap">
                 <div class="flex justify-center">
                     <div class="mb-3 w-96">
                         <input id="fileUploader" type="file" name="img" accept='image/' enctype="multipart/form-data"
@@ -315,7 +314,6 @@
             <input type="hidden" name="voyage_id" value="{{ $voyages[0]->id }}">
         </form>
         <!-- 画像の投稿 -->
-
     </div>
 
     
